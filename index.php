@@ -21,6 +21,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/userAuth/classes/Autoloader.php';
         
         <form class="registration__form col s12" action="/" name="REGISTRAION" method="POST">
             <div class="registration__errors red-text text-lighten-1"></div>
+            <div class="registration__success teal-text text-lighten-1"></div>
 
             <input type="text" name="NAME" placeholder="Name" required>
             <input type="email" name="EMAIL" placeholder="Email" required>
