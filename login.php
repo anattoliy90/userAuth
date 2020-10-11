@@ -7,20 +7,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
     <link rel="stylesheet" href="css/style.css">
-    <title>Registration</title>
+    <title>Login</title>
 </head>
 <body>
-    <div class="registration row">
-        <h1>Registration</h1>
+    <div class="login row">
+        <h1>Login</h1>
         
-        <form class="registration__form col s12" action="/" name="REGISTRAION" method="POST">
-            <div class="registration__errors red-text text-lighten-1"></div>
-            <div class="registration__success teal-text text-lighten-1"></div>
+        <form class="login__form col s6" action="/" name="LOGIN" method="POST">
+            <div class="login__errors red-text text-lighten-1"></div>
+            <div class="login__success teal-text text-lighten-1"></div>
 
-            <input type="text" name="NAME" placeholder="Name" required>
             <input type="email" name="EMAIL" placeholder="Email" required>
-            <input class="registration__pass" type="password" name="PASS" placeholder="Password" required>
-            <button class="registration__submit btn waves-effect waves-light" type="submit">Submit</button>
+            <input class="login__pass" type="password" name="PASS" placeholder="Password" required>
+            <button class="login__submit btn waves-effect waves-light" type="submit">Submit</button>
         </form>
     </div>
 

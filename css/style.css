@@ -1,18 +1,22 @@
-.registration {
+.registration,
+.login {
     margin: 50px 0;
     text-align: center;
 }
 
-.registration .registration__form {
+.registration .registration__form,
+.login .login__form {
     max-width: 500px;
     float: none;
     margin: 0 auto;
 }
 
-.registration__errors {
+.registration__errors,
+.login__errors {
     margin-bottom: 20px;
 }
 
-.registration__submit {
+.registration__submit,
+.login__submit  {
     margin-top: 20px;
 }

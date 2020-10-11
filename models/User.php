@@ -34,4 +34,25 @@ class User
 
         return $user;
     }
+
+    public static function login($email, $pass)
+    {
+        $result = false;
+
+        $db = Db::connect();
+        $sql = 'SELECT * FROM user WHERE email = ?';
+        $query = $db->prepare($sql);
+        $query->execute([$email]);
+        $user = $query->fetch();
+        
+
+        if (password_verify($pass, $user['password'])) {
+            $result = true;
+        }
+
+        $query = null;
+        $db = null;
+
+        return $result;
+    }
 }

@@ -1,5 +1,6 @@
 $(document).ready(function() {
     let registrationForm = $('.registration__form');
+    let loginForm = $('.login__form');
 
     registrationForm.on('submit', function(e) {
         e.preventDefault();
@@ -38,6 +39,23 @@ $(document).ready(function() {
                     form[0].reset();
                 }
             }
-        });        
+        });
+    });
+
+    loginForm.on('submit', function(e) {
+        e.preventDefault();
+
+        let form = $(this);
+
+        $.ajax({
+            method: 'POST',
+            data: form.serialize(),
+            url: '/userAuth/ajax/login.php',
+            success: function(res) {
+                res = JSON.parse(res);
+                
+                console.log(res);
+            }
+        });
     });
 });
