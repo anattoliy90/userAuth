@@ -1,0 +1,18 @@
+.registration {
+    margin: 50px 0;
+    text-align: center;
+}
+
+.registration .registration__form {
+    max-width: 500px;
+    float: none;
+    margin: 0 auto;
+}
+
+.registration__errors {
+    margin-bottom: 20px;
+}
+
+.registration__submit {
+    margin-top: 20px;
+}
