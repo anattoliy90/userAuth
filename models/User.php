@@ -4,6 +4,8 @@ class User
 {
     public static function add($name, $email, $pass)
     {
+        $pass = password_hash($pass, PASSWORD_DEFAULT);
+
         $db = Db::connect();
         $sql = 'INSERT INTO user (name, email, password) VALUES (?, ?, ?)';
         $query = $db->prepare($sql);
