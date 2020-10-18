@@ -25,7 +25,7 @@ $(document).ready(function() {
         $.ajax({
             method: 'POST',
             data: form.serialize(),
-            url: '/userAuth/ajax/userReg.php',
+            url: '/ajax/reg.php',
             success: function(res) {
                 res = JSON.parse(res);
 
@@ -50,7 +50,7 @@ $(document).ready(function() {
         $.ajax({
             method: 'POST',
             data: form.serialize(),
-            url: '/userAuth/ajax/login.php',
+            url: '/ajax/login.php',
             success: function(res) {
                 res = JSON.parse(res);
                 

@@ -1,6 +1,6 @@
 <?php
 
-require_once $_SERVER['DOCUMENT_ROOT'] . '/userAuth/classes/Autoloader.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/classes/Autoloader.php';
 
 $res['success'] = false;
 $res['message'] = 'Не правильный email или пароль';

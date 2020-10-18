@@ -2,8 +2,8 @@
 
 spl_autoload_register(function ($class) {
     $directories = [
-        '/userAuth/classes/',
-        '/userAuth/models/',
+        '/classes/',
+        '/models/',
     ];
 
     foreach ($directories as $directory) {
