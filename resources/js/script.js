@@ -7,9 +7,9 @@ $(document).ready(function() {
 
         let error = '';
         let form = $(this);
-        let errorBlock = form.find('.registration__errors');
-        let successBlock = form.find('.registration__success');
-        let pass = form.find('.registration__pass').val();
+        let errorBlock = form.find('.form__errors');
+        let successBlock = form.find('.form__success');
+        let pass = form.find('.form__pass').val();
 
         if (pass.length < 6) {
             error = 'Пароль должен быть больше 6 символов';
@@ -29,14 +29,14 @@ $(document).ready(function() {
             success: function(res) {
                 res = JSON.parse(res);
 
-                if (res.error) {
-                    errorBlock.text('');
-                    errorBlock.append(res.message);
-                } else if (res.success) {
-                    errorBlock.text('');
-                    successBlock.text('');
+                errorBlock.text('');
+                successBlock.text('');
+
+                if (res.success) {
                     successBlock.append(res.message);
                     form[0].reset();
+                } else {
+                    errorBlock.append(res.message);
                 }
             }
         });
@@ -46,6 +46,7 @@ $(document).ready(function() {
         e.preventDefault();
 
         let form = $(this);
+        let errorBlock = form.find('.form__errors');
 
         $.ajax({
             method: 'POST',
@@ -53,8 +54,14 @@ $(document).ready(function() {
             url: '/ajax/login.php',
             success: function(res) {
                 res = JSON.parse(res);
-                
-                console.log(res);
+
+                errorBlock.text('');
+
+                if (res.success) {
+                    location.href = '/?auth=y';
+                } else {
+                    errorBlock.append(res.message);
+                }
             }
         });
     });

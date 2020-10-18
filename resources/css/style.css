@@ -14,12 +14,12 @@
     margin: 0 auto;
 }
 
-.registration__errors,
-.login__errors {
+.form__errors,
+.form__errors {
     margin-bottom: 20px;
 }
 
-.registration__submit,
-.login__submit  {
+.form__submit,
+.form__submit  {
     margin-top: 20px;
 }
