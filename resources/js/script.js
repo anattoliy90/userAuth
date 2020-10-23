@@ -58,7 +58,7 @@ $(document).ready(function() {
                 errorBlock.text('');
 
                 if (res.success) {
-                    location.href = '/?auth=y';
+                    location.href = '/';
                 } else {
                     errorBlock.append(res.message);
                 }

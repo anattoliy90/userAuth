@@ -35,9 +35,14 @@ class User
         return $user;
     }
 
+    /**
+     * @param string $email user email
+     * @param string $pass password hash
+     * @return int user id
+    */
     public static function login($email, $pass)
     {
-        $result = false;
+        $result = 0;
 
         $db = Db::connect();
         $sql = 'SELECT * FROM user WHERE email = ?';
@@ -47,7 +52,7 @@ class User
         
 
         if (password_verify($pass, $user['password'])) {
-            $result = true;
+            $result = intval($user['id']);
         }
 
         $query = null;

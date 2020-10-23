@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 require_once $_SERVER['DOCUMENT_ROOT'] . '/classes/Autoloader.php';
 
 $res['success'] = false;
@@ -11,6 +13,7 @@ $login = User::login($email, $pass);
 
 if ($isExist) {
     if ($login) {
+        $_SESSION['user_id'] = $login;
         $res['success'] = true;
         $res['message'] = '';
     }
