@@ -1,10 +1,7 @@
 <?php
-
-require_once $_SERVER['DOCUMENT_ROOT'] . '/classes/Autoloader.php';
-
 session_start();
 
-echo '<pre>';print_r($_SESSION);echo '</pre>';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/classes/Autoloader.php';
 ?>
 
 <!DOCTYPE html>

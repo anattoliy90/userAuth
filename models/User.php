@@ -2,14 +2,14 @@
 
 class User
 {
-    public static function add($name, $email, $pass)
+    public static function add($name, $email, $pass, $files)
     {
         $pass = password_hash($pass, PASSWORD_DEFAULT);
 
         $db = Db::connect();
-        $sql = 'INSERT INTO user (name, email, password) VALUES (?, ?, ?)';
+        $sql = 'INSERT INTO user (name, email, password, files) VALUES (?, ?, ?, ?)';
         $query = $db->prepare($sql);
-        $result = $query->execute([$name, $email, $pass]);
+        $result = $query->execute([$name, $email, $pass, $files]);
 
         $query = null;
         $db = null;
